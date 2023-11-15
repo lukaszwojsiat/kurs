@@ -2,7 +2,6 @@ package pl.kurs.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.*;
 import pl.kurs.models.*;
 
 import java.io.*;
@@ -20,14 +19,12 @@ public class ShapeServiceTest {
     Rectangle rectangle = ShapeFactory.createRectangle(5, 2);
     String filePathToTestObjectMapper = "src/test/java/pl/kurs/services/shapeListToTestObjectMapper.json";
     File fileToTestObjectMapper;
-
-    @InjectMocks
     ShapeService shapeService;
 
 
     @Before
     public void init() throws IOException {
-        MockitoAnnotations.openMocks(this);
+        shapeService = new ShapeService();
         shapes = new ArrayList<>();
         shapes.add(ShapeFactory.createCircle(4));
         shapes.add(circle);

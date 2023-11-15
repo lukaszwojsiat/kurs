@@ -23,6 +23,8 @@ public class Main {
         shapeList.add(rectangle);
         shapeList.add(ShapeFactory.createCircle(50));
 
+
+
         ShapeService shapeService = new ShapeService();
         System.out.println("shapeService.findShapeWithMaxArea(shapeList) = " + shapeService.findShapeWithMaxArea(shapeList));
         System.out.println("shapeService.findShapeWithMaxPerimeter(shapeList, Square.class) = " + shapeService.findShapeWithMaxPerimeter(shapeList, Square.class));

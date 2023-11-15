@@ -5,6 +5,9 @@ import java.util.Objects;
 public class Square extends Shape {
     private double side;
 
+    private Square() {
+    }
+
     private Square(double side) {
         this.side = side;
     }

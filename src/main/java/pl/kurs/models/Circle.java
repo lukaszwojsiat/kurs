@@ -5,6 +5,9 @@ import java.util.Objects;
 public class Circle extends Shape {
     private double radius;
 
+    private Circle() {
+    }
+
     private Circle(double radius) {
         this.radius = radius;
     }

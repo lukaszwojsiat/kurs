@@ -3,9 +3,6 @@ package pl.kurs.models;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import pl.kurs.serializers.*;
-
 
 public enum ObjectMapperHolder {
     INSTANCE;
@@ -36,12 +33,6 @@ public enum ObjectMapperHolder {
                 return !t.isContainerType() && super.useForType(t);
             }
         });
-
-        SimpleModule sm1 = new SimpleModule("deserializers");
-        sm1.addDeserializer(Square.class, new SquareDeserializer(Square.class));
-        sm1.addDeserializer(Circle.class, new CircleDeserializer(Circle.class));
-        sm1.addDeserializer(Rectangle.class, new RectangleDeserializer(Rectangle.class));
-        objectMapper.registerModules(sm1);
 
         return objectMapper;
     }
